@@ -15,6 +15,13 @@
   }
   html { scroll-behavior: smooth; }
   body { font-family: 'DM Sans', sans-serif; background: var(--navy); color: var(--white); line-height: 1.7; font-size: 15px; }
+ a,
+ a:visited,
+ a:hover,
+ a:active {
+    color: inherit; /* Uses parent element color */
+    text-decoration: none;
+ }
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; justify-content: space-between; align-items: center;

@@ -294,14 +294,184 @@
     .contact-form-row { grid-template-columns: 1fr; }
   }
 
+
+  /* ==========================
+     Portfolio 2.0 enhancements
+     ========================== */
+  :root {
+    --surface: #101b2e;
+    --surface-2: #16243a;
+    --shadow: rgba(0,0,0,.35);
+    --success: #68d391;
+    --theme-glow: rgba(232,201,126,.22);
+  }
+  body {
+    transition: background .35s ease, color .35s ease;
+  }
+  body[data-theme="developer"] {
+    --navy:#07100d; --navy2:#0d1b16; --accent:#67e8f9; --accent2:#22d3ee;
+    --white:#ecfeff; --muted:rgba(236,254,255,.62); --border:rgba(103,232,249,.2);
+    --card:rgba(103,232,249,.045); --surface:#0b1713; --surface-2:#11231c; --theme-glow:rgba(103,232,249,.2);
+  }
+  body[data-theme="corporate"] {
+    --navy:#071a36; --navy2:#103463; --accent:#76a9ff; --accent2:#3b82f6;
+    --white:#f7fbff; --muted:rgba(247,251,255,.62); --border:rgba(118,169,255,.22);
+    --card:rgba(118,169,255,.05); --surface:#0d2345; --surface-2:#12335f; --theme-glow:rgba(118,169,255,.2);
+  }
+  body[data-theme="modern"] {
+    --navy:#100a1f; --navy2:#20113b; --accent:#c4b5fd; --accent2:#8b5cf6;
+    --white:#faf8ff; --muted:rgba(250,248,255,.62); --border:rgba(196,181,253,.2);
+    --card:rgba(196,181,253,.05); --surface:#19102d; --surface-2:#281846; --theme-glow:rgba(196,181,253,.2);
+  }
+  body[data-theme="light"] {
+    color-scheme: light;
+    --navy:#f6f8fb; --navy2:#ffffff; --accent:#b07a08; --accent2:#8a5e00;
+    --white:#182235; --muted:rgba(24,34,53,.62); --border:rgba(176,122,8,.22);
+    --card:rgba(24,34,53,.045); --surface:#ffffff; --surface-2:#edf2f8; --theme-glow:rgba(176,122,8,.18);
+  }
+  body[data-theme="light"] nav { background:rgba(246,248,251,.92); border-bottom-color:rgba(24,34,53,.12); }
+  body[data-theme="light"] .hero-card, body[data-theme="light"] .skill-card,
+  body[data-theme="light"] .contact-info-card, body[data-theme="light"] .contact-form-card { box-shadow:0 16px 40px rgba(24,34,53,.08); }
+  .nav-links { align-items:center; }
+  .nav-tool-btn {
+    border:1px solid var(--border); background:var(--card); color:var(--muted);
+    border-radius:8px; min-width:36px; height:32px; padding:0 8px; cursor:pointer;
+    font:inherit; font-size:11px; transition:.2s ease;
+  }
+  .nav-tool-btn:hover { color:var(--accent); border-color:var(--accent); transform:translateY(-1px); }
+  .nav-mobile-toggle { display:none; }
+  .theme-menu {
+    position:fixed; top:72px; right:24px; z-index:10001; width:270px; padding:10px;
+    background:var(--surface); border:1px solid var(--border); border-radius:14px;
+    box-shadow:0 20px 50px var(--shadow); opacity:0; visibility:hidden; transform:translateY(-8px);
+    transition:.2s ease;
+  }
+  .theme-menu.open { opacity:1; visibility:visible; transform:none; }
+  .theme-menu-title { padding:8px 10px 6px; color:var(--muted); font-size:10px; text-transform:uppercase; letter-spacing:1.5px; }
+  .theme-menu button { width:100%; display:flex; gap:10px; align-items:center; text-align:left; border:0; background:transparent; color:var(--white); padding:10px; border-radius:9px; cursor:pointer; }
+  .theme-menu button:hover { background:var(--card); }
+  .theme-menu button > span:first-child { font-size:18px; width:24px; }
+  .theme-menu b { display:block; font-size:12px; }
+  .theme-menu small { display:block; color:var(--muted); font-size:10px; margin-top:2px; }
+  .hero-status { display:flex; align-items:center; gap:8px; margin-top:14px; color:var(--muted); font-size:11px; }
+  .status-dot { width:8px; height:8px; border-radius:50%; background:var(--success); box-shadow:0 0 0 4px rgba(104,211,145,.1); }
+  .btn-resume { text-decoration:none; }
+  .achievement-toolbar { display:flex; gap:8px; margin:0 0 18px; }
+  .mini-toggle { border:1px solid var(--border); background:var(--card); color:var(--muted); padding:7px 11px; border-radius:999px; cursor:pointer; font:inherit; font-size:11px; }
+  .mini-toggle.active, .mini-toggle:hover { color:var(--accent); border-color:var(--accent); }
+  .achievement-timeline { display:none; max-width:900px; margin:0 auto; }
+  .achievement-timeline.show { display:block; }
+  .achievement-timeline .timeline-item { display:grid; grid-template-columns:78px 1fr; gap:20px; padding:18px 0; border-bottom:1px solid var(--border); position:relative; }
+  .achievement-timeline .timeline-item:last-child { border-bottom:0; }
+  .timeline-item > span { color:var(--accent); font-family:'DM Serif Display',serif; font-size:24px; }
+  .timeline-item b { font-size:14px; }
+  .timeline-item p { color:var(--muted); font-size:13px; margin-top:4px; }
+  #achievementCards.timeline-hidden { display:none !important; }
+  #skills .skill-card { cursor:pointer; transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+  #skills .skill-card:hover { transform:translateY(-4px); border-color:var(--accent); box-shadow:0 14px 34px var(--theme-glow); }
+  .copy-email-btn { border:1px solid var(--border); background:var(--card); color:var(--accent); border-radius:6px; padding:4px 7px; cursor:pointer; margin-left:7px; }
+  .copy-email-btn:hover { border-color:var(--accent); }
+  .contact-email-row { display:flex; align-items:center; gap:3px; }
+  .overlay-modal { position:fixed; inset:0; z-index:10000; background:rgba(0,0,0,.62); display:flex; align-items:center; justify-content:center; padding:20px; opacity:0; visibility:hidden; transition:.2s ease; backdrop-filter:blur(6px); }
+  .overlay-modal.open { opacity:1; visibility:visible; }
+  .modal-card { width:min(700px,100%); max-height:min(760px,90vh); overflow:auto; background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:30px; position:relative; box-shadow:0 30px 80px var(--shadow); }
+  .modal-close { position:absolute; top:12px; right:14px; width:34px; height:34px; border:1px solid var(--border); background:var(--card); color:var(--muted); border-radius:50%; cursor:pointer; font-size:20px; }
+  .modal-card h2 { margin-bottom:10px; }
+  .modal-lead { color:var(--muted); max-width:650px; }
+  .modal-body { margin-top:18px; color:var(--muted); line-height:1.8; }
+  .recruiter-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:22px 0; }
+  .recruiter-grid > div { padding:14px; border:1px solid var(--border); background:var(--card); border-radius:10px; }
+  .recruiter-grid strong { display:block; color:var(--accent); font-family:'DM Serif Display',serif; font-size:24px; }
+  .recruiter-grid span { display:block; color:var(--muted); font-size:10px; text-transform:uppercase; letter-spacing:.8px; margin-top:3px; }
+  .recruiter-tags { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:22px; }
+  .recruiter-tags span { padding:6px 9px; border:1px solid var(--border); border-radius:999px; color:var(--accent); background:var(--card); font-size:11px; }
+  .modal-actions { display:flex; flex-wrap:wrap; gap:9px; }
+  .modal-actions a, .modal-actions button { text-decoration:none; }
+  .insights-grid { grid-template-columns:repeat(3,1fr); }
+  .command-palette { position:fixed; inset:0; z-index:10002; background:rgba(0,0,0,.58); display:flex; justify-content:center; align-items:flex-start; padding-top:12vh; opacity:0; visibility:hidden; transition:.2s ease; backdrop-filter:blur(5px); }
+  .command-palette.open { opacity:1; visibility:visible; }
+  .command-box { width:min(680px,calc(100vw - 30px)); background:var(--surface); border:1px solid var(--border); border-radius:16px; box-shadow:0 30px 80px var(--shadow); overflow:hidden; }
+  .command-search { display:flex; align-items:center; gap:10px; padding:14px 16px; border-bottom:1px solid var(--border); }
+  .command-search span { color:var(--accent); font-size:20px; }
+  .command-search input { flex:1; border:0; outline:0; background:transparent; color:var(--white); font:inherit; font-size:15px; }
+  .command-list { padding:8px; max-height:390px; overflow:auto; }
+  .command-item { width:100%; display:flex; justify-content:space-between; align-items:center; gap:12px; text-align:left; padding:11px 12px; border:0; background:transparent; color:var(--white); border-radius:9px; cursor:pointer; font:inherit; }
+  .command-item:hover, .command-item.selected { background:var(--card); color:var(--accent); }
+  .command-item small { color:var(--muted); font-size:10px; }
+  .command-footer { display:flex; justify-content:flex-end; gap:15px; padding:9px 14px; color:var(--muted); border-top:1px solid var(--border); font-size:10px; }
+  @media (max-width: 900px) {
+    nav { padding:1rem 1.25rem; }
+    .nav-mobile-toggle { display:block; margin-left:auto; border:1px solid var(--border); background:var(--card); color:var(--accent); border-radius:8px; padding:6px 9px; }
+    .nav-links { display:none; position:absolute; top:58px; left:12px; right:12px; flex-direction:column; align-items:stretch; padding:10px; background:var(--surface); border:1px solid var(--border); border-radius:12px; box-shadow:0 20px 50px var(--shadow); }
+    .nav-links.open { display:flex; }
+    .nav-links a { padding:9px 10px; }
+    .nav-tool-btn { width:100%; }
+    .theme-menu { right:12px; left:12px; width:auto; }
+  }
+  @media (max-width: 700px) {
+    .recruiter-grid, .insights-grid { grid-template-columns:repeat(2,1fr); }
+    .achievement-timeline .timeline-item { grid-template-columns:60px 1fr; }
+    .hero-status { align-items:flex-start; }
+  }
+  @media (max-width: 480px) {
+    .recruiter-grid, .insights-grid { grid-template-columns:1fr 1fr; }
+    .modal-card { padding:24px 18px; }
+    .command-footer { display:none; }
+  }
+  @media print {
+    nav, .ar-launcher, .ar-panel, .theme-menu, .overlay-modal, .command-palette { display:none !important; }
+    body { background:white !important; color:#111 !important; }
+    section, .hero { break-inside:avoid; }
+  }
+
+  .insights-fab { position:fixed; left:18px; bottom:18px; z-index:9998; width:38px; height:38px; border-radius:50%; border:1px solid var(--border); background:var(--surface); color:var(--accent); cursor:pointer; box-shadow:0 8px 24px var(--shadow); opacity:.78; }
+  .insights-fab:hover { opacity:1; transform:translateY(-2px); }
+
+
+  /* Light theme readability fixes */
+  body[data-theme="light"] .tl-body,
+  body[data-theme="light"] .about-text,
+  body[data-theme="light"] .contact-info-intro,
+  body[data-theme="light"] .contact-method-value,
+  body[data-theme="light"] .agent-message.bot {
+    color: #334155;
+  }
+  body[data-theme="light"] .tl-body li::before {
+    color: var(--accent);
+  }
+  body[data-theme="light"] .agent-message.bot {
+    background: rgba(24,34,53,.055);
+    border-color: rgba(24,34,53,.12);
+  }
+  body[data-theme="light"] .contact-field input::placeholder,
+  body[data-theme="light"] .contact-field textarea::placeholder {
+    color: rgba(24,34,53,.45);
+  }
+  body[data-theme="light"] .contact-field input,
+  body[data-theme="light"] .contact-field select,
+  body[data-theme="light"] .contact-field textarea {
+    background: #ffffff;
+    color: #182235;
+  }
+
+  /* AI launcher: keep the label visible on desktop */
+  .ar-launcher.is-compact .ar-launcher-label { display: inline; }
+  @media (max-width: 700px) {
+    .ar-launcher.is-compact .ar-launcher-label { display: none; }
+  }
+
 </style>
 </head>
 <body>
 <nav>
   <div class="nav-logo">RK</div>
-  <div class="nav-links">
+  <button class="nav-mobile-toggle" id="navMobileToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+  <div class="nav-links" id="navLinks">
     <a href="#about">About</a><a href="#experience">Experience</a>
     <a href="#achievements">Achievements</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#ask-ai">Ask AI</a><a href="#contact">Contact</a>
+    <button class="nav-tool-btn" id="recruiterModeBtn" type="button" title="Open recruiter view">👔</button>
+    <button class="nav-tool-btn" id="themeToggle" type="button" title="Change theme">🎨</button>
+    <button class="nav-tool-btn" id="commandPaletteBtn" type="button" title="Command palette">⌘K</button>
   </div>
 </nav>
 <div class="hero">
@@ -318,6 +488,11 @@
       <div class="hero-btns">
         <a href="#experience" class="btn-primary">View Experience</a>
         <a href="#contact" class="btn-ghost">Get in Touch</a>
+        <a href="Rahul-Kumar-Resume.pdf" class="btn-ghost btn-resume" download>↓ Resume</a>
+      </div>
+      <div class="hero-status">
+        <span class="status-dot"></span>
+        <span>Technical Lead · Application Development · Production Support</span>
       </div>
     </div>
     <div class="hero-card">
@@ -361,7 +536,11 @@
 <section id="achievements">
   <div class="section-label">Impact</div>
   <h2>Key Achievements</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
+  <div class="achievement-toolbar">
+    <button class="mini-toggle active" data-ach-view="cards" type="button">▦ Cards</button>
+    <button class="mini-toggle" data-ach-view="timeline" type="button">◷ Timeline</button>
+  </div>
+  <div id="achievementCards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
 
     <div class="skill-card" style="display:flex;gap:1rem;align-items:flex-start;">
       <div style="min-width:44px;height:44px;border-radius:8px;background:rgba(232,201,126,0.12);border:0.5px solid var(--border);display:flex;align-items:center;justify-content:center;">
@@ -429,6 +608,13 @@
       </div>
     </div>
 
+  </div>
+  <div class="achievement-timeline" id="achievementTimeline">
+    <div class="timeline-item"><span>15+</span><div><b>Global Client Support</b><p>Supported critical daily deliverables across multiple financial domains.</p></div></div>
+    <div class="timeline-item"><span>500+</span><div><b>Production Incidents</b><p>Resolved high-volume production incidents while maintaining SLA commitments.</p></div></div>
+    <div class="timeline-item"><span>30%</span><div><b>Monitoring Effort Reduction</b><p>Improved monitoring efficiency through Grafana enhancements and automation initiatives.</p></div></div>
+    <div class="timeline-item"><span>40%</span><div><b>SQL Performance Gain</b><p>Improved query performance through systematic optimization.</p></div></div>
+    <div class="timeline-item"><span>20+</span><div><b>Knowledge Transfer Sessions</b><p>Delivered KT sessions to support application transition and operational handover.</p></div></div>
   </div>
 </section>
 <section id="skills">
@@ -504,8 +690,9 @@
         </svg>
         <div>
           <div class="contact-method-label">Email</div>
-          <div class="contact-method-value">
+          <div class="contact-method-value contact-email-row">
             <a href="mailto:rahul.rahul.kumar704@gmail.com">rahul.rahul.kumar704@gmail.com</a>
+            <button class="copy-email-btn" id="copyEmailBtn" type="button" title="Copy email">📋</button>
           </div>
         </div>
       </div>
@@ -606,6 +793,63 @@
   <div class="footer-links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#achievements">Achievements</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#ask-ai">Ask AI</a></div>
   <p>(c) 2026 Rahul Kumar  |  Technical Lead  |  New Delhi, India</p>
 </footer>
+
+<div class="theme-menu" id="themeMenu" aria-hidden="true">
+  <div class="theme-menu-title">Choose a theme</div>
+  <button data-theme-choice="midnight"><span>🌑</span><span><b>Midnight Gold</b><small>Current signature look</small></span></button>
+  <button data-theme-choice="developer"><span>💻</span><span><b>Developer Dark</b><small>Dark + terminal cyan</small></span></button>
+  <button data-theme-choice="corporate"><span>🔵</span><span><b>Corporate Blue</b><small>Enterprise / recruiter</small></span></button>
+  <button data-theme-choice="modern"><span>🟣</span><span><b>Modern Tech</b><small>AI / technology feel</small></span></button>
+  <button data-theme-choice="light"><span>☀️</span><span><b>Clean Light</b><small>Resume-style presentation</small></span></button>
+</div>
+
+<div class="overlay-modal" id="recruiterModal" aria-hidden="true">
+  <div class="modal-card recruiter-card" role="dialog" aria-modal="true" aria-labelledby="recruiterTitle">
+    <button class="modal-close" data-close-modal="recruiterModal" aria-label="Close">×</button>
+    <div class="section-label">Recruiter View</div>
+    <h2 id="recruiterTitle">Rahul Kumar</h2>
+    <p class="modal-lead">Technical Lead with 10+ years across application development, production support, incident management, release management, and banking & financial services.</p>
+    <div class="recruiter-grid">
+      <div><strong>10+</strong><span>Years Experience</span></div>
+      <div><strong>15+</strong><span>Global Clients</span></div>
+      <div><strong>L2/L3</strong><span>Support Leadership</span></div>
+      <div><strong>Java</strong><span>Core Engineering</span></div>
+    </div>
+    <div class="recruiter-tags"><span>Java / Spring</span><span>ReactJS</span><span>SQL / Snowflake</span><span>Splunk / Grafana</span><span>Unix / Linux</span><span>ServiceNow</span></div>
+    <div class="modal-actions">
+      <a class="btn-primary" href="Rahul-Kumar-Resume.pdf" download>↓ Download Resume</a>
+      <a class="btn-ghost" href="#contact" data-close-modal="recruiterModal">Contact Rahul</a>
+      <button class="btn-ghost" type="button" data-close-modal="recruiterModal" data-open-ai>Ask Rahul AI</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay-modal" id="skillModal" aria-hidden="true">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="skillModalTitle">
+    <button class="modal-close" data-close-modal="skillModal" aria-label="Close">×</button>
+    <div class="section-label">Technical Skill</div>
+    <h2 id="skillModalTitle">Skill</h2>
+    <div id="skillModalBody" class="modal-body"></div>
+  </div>
+</div>
+
+<div class="overlay-modal" id="insightsModal" aria-hidden="true">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="insightsTitle">
+    <button class="modal-close" data-close-modal="insightsModal" aria-label="Close">×</button>
+    <div class="section-label">Privacy-friendly</div>
+    <h2 id="insightsTitle">Session Insights</h2>
+    <p class="modal-lead">These numbers are stored only in this browser. They are not global visitor analytics.</p>
+    <div class="recruiter-grid insights-grid" id="insightsGrid"></div>
+  </div>
+</div>
+
+<div class="command-palette" id="commandPalette" aria-hidden="true">
+  <div class="command-box" role="dialog" aria-modal="true" aria-label="Portfolio command palette">
+    <div class="command-search"><span>⌕</span><input id="commandInput" placeholder="Search portfolio..." autocomplete="off"></div>
+    <div class="command-list" id="commandList"></div>
+    <div class="command-footer"><span>↑↓ Navigate</span><span>Enter Open</span><span>Esc Close</span></div>
+  </div>
+</div>
 <script>
   const contactForm = document.getElementById('contactForm');
 
@@ -737,5 +981,376 @@
   });
 </script>
 <script src="ask-rahul-widget.js" data-worker-url="https://rahul-portfolio-agent.rahulkcodes.workers.dev"></script>
+<script>
+  // ===== Portfolio 2.0 interactions =====
+  (function () {
+    const body = document.body;
+    const themeMenu = document.getElementById('themeMenu');
+    const themeToggle = document.getElementById('themeToggle');
+    const recruiterModal = document.getElementById('recruiterModal');
+    const skillModal = document.getElementById('skillModal');
+    const insightsModal = document.getElementById('insightsModal');
+    const commandPalette = document.getElementById('commandPalette');
+    const commandInput = document.getElementById('commandInput');
+    const commandList = document.getElementById('commandList');
+    const navLinks = document.getElementById('navLinks');
+    const mobileToggle = document.getElementById('navMobileToggle');
+
+    const THEME_KEY = 'rahul_portfolio_theme_v1';
+    const STATS_KEY = 'rahul_portfolio_session_v1';
+
+    function getStats() {
+      try { return JSON.parse(localStorage.getItem(STATS_KEY) || '{"sections":{},"aiOpens":0,"contactOpens":0,"messagesSent":0,"started":""}'); }
+      catch { return {sections:{}, aiOpens:0, contactOpens:0, messagesSent:0, started:''}; }
+    }
+    function saveStats(s) { try { localStorage.setItem(STATS_KEY, JSON.stringify(s)); } catch {} }
+    const stats = getStats();
+    if (!stats.started) { stats.started = new Date().toISOString(); saveStats(stats); }
+
+    function applyTheme(theme) {
+      const allowed = ['midnight','developer','corporate','modern','light'];
+      const chosen = allowed.includes(theme) ? theme : 'midnight';
+      body.dataset.theme = chosen;
+      try { localStorage.setItem(THEME_KEY, chosen); } catch {}
+      document.querySelectorAll('[data-theme-choice]').forEach(btn => btn.classList.toggle('selected', btn.dataset.themeChoice === chosen));
+    }
+    let savedTheme = 'midnight';
+    try { savedTheme = localStorage.getItem(THEME_KEY) || 'midnight'; } catch {}
+    applyTheme(savedTheme);
+
+    themeToggle?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      themeMenu.classList.toggle('open');
+      themeMenu.setAttribute('aria-hidden', String(!themeMenu.classList.contains('open')));
+    });
+    themeMenu?.querySelectorAll('[data-theme-choice]').forEach(btn => btn.addEventListener('click', () => {
+      applyTheme(btn.dataset.themeChoice);
+      themeMenu.classList.remove('open');
+    }));
+    document.addEventListener('click', e => {
+      if (themeMenu && !themeMenu.contains(e.target) && e.target !== themeToggle) themeMenu.classList.remove('open');
+    });
+
+    function openModal(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.classList.add('open');
+      el.setAttribute('aria-hidden','false');
+      document.body.classList.add('modal-open');
+    }
+    function closeModal(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.classList.remove('open');
+      el.setAttribute('aria-hidden','true');
+      if (!document.querySelector('.overlay-modal.open')) document.body.classList.remove('modal-open');
+    }
+    document.querySelectorAll('[data-close-modal]').forEach(btn => btn.addEventListener('click', () => {
+      closeModal(btn.dataset.closeModal);
+      if (btn.closest('[data-close-modal="recruiterModal"]') && btn.dataset.openAi) window.dispatchEvent(new CustomEvent('rahul:open-ai'));
+    }));
+    document.querySelectorAll('.overlay-modal').forEach(modal => modal.addEventListener('click', e => {
+      if (e.target === modal) closeModal(modal.id);
+    }));
+
+    document.getElementById('recruiterModeBtn')?.addEventListener('click', () => openModal('recruiterModal'));
+
+    // Interactive skills: content is derived from the existing portfolio skill cards.
+    document.querySelectorAll('#skills .skill-card').forEach(card => {
+      card.setAttribute('tabindex','0');
+      card.setAttribute('role','button');
+      const title = card.querySelector('h4')?.textContent?.trim() || 'Skill';
+      const text = card.querySelector('.skill-list')?.innerHTML || '';
+      const openSkill = () => {
+        document.getElementById('skillModalTitle').textContent = title;
+        document.getElementById('skillModalBody').innerHTML = '<p>Core areas in this category:</p><div class="recruiter-tags" style="margin-top:14px">' +
+          text.replace(/<br\s*\/?>/gi,'|').split('|').map(x => x.trim()).filter(Boolean).map(x => `<span>${x}</span>`).join('') + '</div>';
+        openModal('skillModal');
+      };
+      card.addEventListener('click', openSkill);
+      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openSkill(); } });
+    });
+
+    // Achievement cards / timeline toggle.
+    const cards = document.getElementById('achievementCards');
+    const timeline = document.getElementById('achievementTimeline');
+    document.querySelectorAll('[data-ach-view]').forEach(btn => btn.addEventListener('click', () => {
+      const isTimeline = btn.dataset.achView === 'timeline';
+      cards?.classList.toggle('timeline-hidden', isTimeline);
+      timeline?.classList.toggle('show', isTimeline);
+      document.querySelectorAll('[data-ach-view]').forEach(b => b.classList.toggle('active', b === btn));
+    }));
+
+    // Copy email.
+    document.getElementById('copyEmailBtn')?.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText('rahul.rahul.kumar704@gmail.com');
+        const btn = document.getElementById('copyEmailBtn');
+        const old = btn.textContent; btn.textContent = '✓';
+        setTimeout(() => btn.textContent = old, 1500);
+      } catch {
+        window.location.href = 'mailto:rahul.rahul.kumar704@gmail.com';
+      }
+    });
+
+    // Mobile navigation.
+    mobileToggle?.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      mobileToggle.setAttribute('aria-expanded', String(open));
+    });
+    navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      mobileToggle?.setAttribute('aria-expanded','false');
+      if (a.getAttribute('href') === '#contact') stats.contactOpens++;
+      saveStats(stats);
+    }));
+
+    // Section visit tracking: local browser only.
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          stats.sections[id] = (stats.sections[id] || 0) + 1;
+          saveStats(stats);
+        }
+      });
+    }, { threshold: 0.35 });
+    document.querySelectorAll('section[id]').forEach(section => observer.observe(section));
+
+    function renderInsights() {
+      const sectionCount = Object.values(stats.sections).reduce((a,b) => a+b,0);
+      const topSection = Object.entries(stats.sections).sort((a,b)=>b[1]-a[1])[0];
+      const values = [
+        ['Sections viewed', sectionCount, 'This browser'],
+        ['AI launches', stats.aiOpens, 'This browser'],
+        ['Contact visits', stats.contactOpens, 'This browser'],
+        ['Messages sent', stats.messagesSent, 'This browser'],
+        ['Top section', topSection ? topSection[0] : '—', 'Most viewed'],
+        ['Theme', body.dataset.theme, 'Saved preference']
+      ];
+      document.getElementById('insightsGrid').innerHTML = values.map(v => `<div><strong>${v[1]}</strong><span>${v[2]} · ${v[0]}</span></div>`).join('');
+    }
+
+    // Command palette.
+    const commands = [
+      ['About','about','About Rahul'],
+      ['Experience','experience','Career history'],
+      ['Achievements','achievements','Impact & achievements'],
+      ['Skills','skills','Technical skills'],
+      ['Education','education','Academic background'],
+      ['Ask Rahul AI','ask-ai','AI resume assistant'],
+      ['Contact Rahul','contact','Send a message'],
+      ['Change Theme','theme','Appearance'],
+      ['Recruiter View','recruiter','Recruiter summary'],
+      ['Session Insights','insights','This browser only'],
+      ['Download Resume','resume','PDF resume']
+    ];
+    let selectedIndex = 0;
+    function filteredCommands() {
+      const q = (commandInput.value || '').toLowerCase().trim();
+      return commands.filter(c => !q || c[0].toLowerCase().includes(q) || c[2].toLowerCase().includes(q));
+    }
+    function renderCommands() {
+      const list = filteredCommands();
+      if (selectedIndex >= list.length) selectedIndex = Math.max(0,list.length-1);
+      commandList.innerHTML = list.map((c,i) => `<button class="command-item ${i===selectedIndex?'selected':''}" data-command="${c[1]}"><span>${c[0]}</span><small>${c[2]}</small></button>`).join('');
+      commandList.querySelectorAll('.command-item').forEach(btn => btn.addEventListener('click', () => executeCommand(btn.dataset.command)));
+    }
+    function openPalette() {
+      commandPalette.classList.add('open');
+      commandPalette.setAttribute('aria-hidden','false');
+      commandInput.value=''; selectedIndex=0; renderCommands(); setTimeout(()=>commandInput.focus(),20);
+    }
+    function closePalette() { commandPalette.classList.remove('open'); commandPalette.setAttribute('aria-hidden','true'); }
+    function executeCommand(cmd) {
+      closePalette();
+      if (cmd === 'theme') {
+        // Open on the next tick so the document-level click handler that
+        // closed the command palette cannot immediately close the theme menu.
+        setTimeout(() => {
+          if (!themeMenu) return;
+          themeMenu.classList.add('open');
+          themeMenu.setAttribute('aria-hidden','false');
+        }, 0);
+        return;
+      }
+      if (cmd === 'recruiter') { openModal('recruiterModal'); return; }
+      if (cmd === 'insights') { renderInsights(); openModal('insightsModal'); return; }
+      if (cmd === 'resume') { window.location.href='Rahul-Kumar-Resume.pdf'; return; }
+      const target = document.getElementById(cmd);
+      if (target) target.scrollIntoView({behavior:'smooth'});
+    }
+    document.getElementById('commandPaletteBtn')?.addEventListener('click', openPalette);
+    commandInput?.addEventListener('input', () => { selectedIndex=0; renderCommands(); });
+    commandInput?.addEventListener('keydown', e => {
+      const list = filteredCommands();
+      if (e.key === 'ArrowDown') { e.preventDefault(); selectedIndex=Math.min(selectedIndex+1,Math.max(0,list.length-1)); renderCommands(); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); selectedIndex=Math.max(selectedIndex-1,0); renderCommands(); }
+      else if (e.key === 'Enter' && list[selectedIndex]) executeCommand(list[selectedIndex][1]);
+      else if (e.key === 'Escape') closePalette();
+    });
+    commandPalette?.addEventListener('click', e => { if (e.target === commandPalette) closePalette(); });
+    document.addEventListener('keydown', e => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); openPalette(); }
+      if (e.key === 'Escape') { closePalette(); themeMenu?.classList.remove('open'); }
+    });
+
+    // Contact form local interaction count.
+    const contactForm = document.getElementById('contactForm');
+    contactForm?.addEventListener('submit', () => {
+      stats.messagesSent++;
+      saveStats(stats);
+    }, { capture:true });
+
+    document.getElementById('insightsFab')?.addEventListener('click', () => { renderInsights(); openModal('insightsModal'); });
+    // Expose a small hook for the AI widget.
+    window.addEventListener('rahul:ai-opened', () => { stats.aiOpens++; saveStats(stats); });
+    window.addEventListener('rahul:open-ai', () => {
+      const launcher = document.querySelector('.ar-launcher');
+      if (launcher) launcher.click();
+      else document.getElementById('ask-ai')?.scrollIntoView({behavior:'smooth'});
+    });
+  })();
+</script>
+<button class="insights-fab" id="insightsFab" type="button" title="Session insights">◔</button>
+
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+
+  // Recruiter View
+  document.addEventListener('click', (event) => {
+    const recruiter = event.target.closest('#recruiterModeBtn');
+    if (recruiter) {
+      const modal = $('recruiterModal');
+      if (modal) {
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+      }
+      return;
+    }
+
+    // Theme picker
+    const themeBtn = event.target.closest('#themeToggle');
+    if (themeBtn) {
+      event.preventDefault();
+      event.stopPropagation();
+      const menu = $('themeMenu');
+      if (menu) {
+        menu.classList.toggle('open');
+        menu.setAttribute('aria-hidden', String(!menu.classList.contains('open')));
+      }
+      return;
+    }
+
+    const commandTheme = event.target.closest('.command-item[data-command="theme"]');
+    if (commandTheme) {
+      const palette = $('commandPalette');
+      if (palette) {
+        palette.classList.remove('open');
+        palette.setAttribute('aria-hidden', 'true');
+      }
+      setTimeout(() => {
+        const menu = $('themeMenu');
+        if (menu) {
+          menu.classList.add('open');
+          menu.setAttribute('aria-hidden', 'false');
+        }
+      }, 0);
+      return;
+    }
+
+    const themeChoice = event.target.closest('[data-theme-choice]');
+    if (themeChoice) {
+      const theme = themeChoice.dataset.themeChoice;
+      document.body.dataset.theme = theme;
+      try { localStorage.setItem('rahul_portfolio_theme_v1', theme); } catch {}
+      document.querySelectorAll('[data-theme-choice]').forEach(b =>
+        b.classList.toggle('selected', b.dataset.themeChoice === theme)
+      );
+      const menu = $('themeMenu');
+      if (menu) {
+        menu.classList.remove('open');
+        menu.setAttribute('aria-hidden', 'true');
+      }
+      window.dispatchEvent(new CustomEvent('rahul:theme-changed', { detail: { theme } }));
+      return;
+    }
+
+    // Recruiter -> Ask Rahul AI
+    const askAi = event.target.closest('[data-open-ai]');
+    if (askAi) {
+      const modal = $('recruiterModal');
+      if (modal) {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+      document.body.classList.remove('modal-open');
+      if (typeof window.openRahulAI === 'function') {
+        window.openRahulAI();
+      } else {
+        window.dispatchEvent(new CustomEvent('rahul:open-ai'));
+      }
+      return;
+    }
+
+    // Command palette
+    const commandBtn = event.target.closest('#commandPaletteBtn');
+    if (commandBtn) {
+      event.preventDefault();
+      event.stopPropagation();
+      const palette = $('commandPalette');
+      if (palette) {
+        palette.classList.add('open');
+        palette.setAttribute('aria-hidden', 'false');
+        const input = $('commandInput');
+        if (input) {
+          input.value = '';
+          input.focus();
+        }
+      }
+      return;
+    }
+
+    // Close modal when clicking the X
+    const closeBtn = event.target.closest('.modal-close');
+    if (closeBtn) {
+      const id = closeBtn.dataset.closeModal;
+      const modal = $(id);
+      if (modal) {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+      if (!document.querySelector('.overlay-modal.open')) {
+        document.body.classList.remove('modal-open');
+      }
+    }
+  });
+
+  // Ctrl/Cmd + K command palette fallback
+  document.addEventListener('keydown', (event) => {
+    if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+      event.preventDefault();
+      const palette = $('commandPalette');
+      if (palette) {
+        palette.classList.add('open');
+        palette.setAttribute('aria-hidden', 'false');
+        $('commandInput')?.focus();
+      }
+    }
+    if (event.key === 'Escape') {
+      $('commandPalette')?.classList.remove('open');
+      $('themeMenu')?.classList.remove('open');
+      document.querySelectorAll('.overlay-modal.open').forEach(m => {
+        m.classList.remove('open');
+        m.setAttribute('aria-hidden', 'true');
+      });
+      document.body.classList.remove('modal-open');
+    }
+  });
+})();
+</script>
+
 </body>
 </html>

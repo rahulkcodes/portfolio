@@ -23,14 +23,21 @@
   style.textContent = `
     .ar-launcher {
       position: fixed; bottom: 24px; right: 24px; z-index: 9999;
-      width: 60px; height: 60px; border-radius: 999px;
+      min-width: 60px; height: 60px; padding: 0 18px; border-radius: 999px;
       background: linear-gradient(135deg, #d4af37, #f0d878);
       color: #0b1220; border: none; cursor: pointer;
       box-shadow: 0 8px 24px rgba(0,0,0,0.35);
-      font-size: 26px; display: flex; align-items: center; justify-content: center;
-      transition: transform 0.15s ease;
+      font-size: 22px; display: flex; align-items: center; justify-content: center; gap: 8px;
+      transition: transform 0.2s ease, width 0.25s ease, box-shadow 0.2s ease;
     }
-    .ar-launcher:hover { transform: scale(1.06); }
+    .ar-launcher:hover { transform: scale(1.04); box-shadow: 0 12px 30px rgba(0,0,0,0.42); }
+    .ar-launcher-label { font-size: 12px; font-weight: 700; letter-spacing: .2px; }
+    .ar-launcher.is-compact .ar-launcher-label { display: inline; }
+    .ar-launcher.is-highlighted { min-width: 156px; }
+    @media (max-width: 700px) {
+      .ar-launcher.is-compact .ar-launcher-label { display: none; }
+    }
+    .ar-launcher-icon { line-height: 1; }
     .ar-panel {
       position: fixed; bottom: 96px; right: 24px; z-index: 9999;
       width: min(380px, calc(100vw - 32px)); height: min(560px, calc(100vh - 140px));
@@ -95,9 +102,9 @@
   document.head.appendChild(style)
 
   const launcher = document.createElement('button')
-  launcher.className = 'ar-launcher'
+  launcher.className = 'ar-launcher is-highlighted'
   launcher.setAttribute('aria-label', 'Ask Rahul\'s AI assistant a question')
-  launcher.innerHTML = '💬'
+  launcher.innerHTML = '<span class="ar-launcher-icon">🤖</span><span class="ar-launcher-label">Ask Rahul AI</span>'
 
   const panel = document.createElement('div')
   panel.className = 'ar-panel'
@@ -173,8 +180,44 @@
     panel.classList.toggle('ar-open', isOpen)
     if (isOpen) inputEl.focus()
   }
-  launcher.addEventListener('click', () => toggle())
+  launcher.addEventListener('click', () => {
+    toggle()
+    if (isOpen) window.dispatchEvent(new CustomEvent('rahul:ai-opened'))
+  })
   closeBtn.addEventListener('click', () => toggle(false))
+
+  // Allow other portfolio UI elements (for example Recruiter View)
+  // to open the same AI panel without duplicating the widget UI.
+  window.openRahulAI = () => {
+    toggle(true)
+    window.dispatchEvent(new CustomEvent('rahul:ai-opened'))
+  }
+
+  window.addEventListener('rahul:open-ai', () => {
+    window.openRahulAI?.()
+  })
+
+  // Make the AI feature obvious for first-time visitors, then keep it compact.
+  // Keep the AI launcher labeled so visitors immediately know what it does.
+  launcher.classList.add('is-highlighted')
+
+  function applyWidgetTheme(theme) {
+    const palettes = {
+      midnight: ['#d4af37','#f0d878','#0b1220'],
+      developer: ['#22d3ee','#67e8f9','#07100d'],
+      corporate: ['#3b82f6','#76a9ff','#071a36'],
+      modern: ['#8b5cf6','#c4b5fd','#100a1f'],
+      light: ['#b07a08','#d6a52f','#182235']
+    }
+    const p = palettes[theme] || palettes.midnight
+    launcher.style.background = `linear-gradient(135deg, ${p[0]}, ${p[1]})`
+    launcher.style.color = p[2]
+  }
+
+  applyWidgetTheme(document.body?.dataset?.theme || 'midnight')
+  window.addEventListener('rahul:theme-changed', (event) => {
+    applyWidgetTheme(event.detail?.theme || 'midnight')
+  })
 
   async function sendMessage(text) {
     const trimmed = text.trim()

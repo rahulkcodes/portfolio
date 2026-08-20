@@ -32,11 +32,8 @@
     }
     .ar-launcher:hover { transform: scale(1.04); box-shadow: 0 12px 30px rgba(0,0,0,0.42); }
     .ar-launcher-label { font-size: 12px; font-weight: 700; letter-spacing: .2px; }
-    .ar-launcher.is-compact .ar-launcher-label { display: inline; }
+    .ar-launcher.is-compact .ar-launcher-label { display: none; }
     .ar-launcher.is-highlighted { min-width: 156px; }
-    @media (max-width: 700px) {
-      .ar-launcher.is-compact .ar-launcher-label { display: none; }
-    }
     .ar-launcher-icon { line-height: 1; }
     .ar-panel {
       position: fixed; bottom: 96px; right: 24px; z-index: 9999;
@@ -186,20 +183,11 @@
   })
   closeBtn.addEventListener('click', () => toggle(false))
 
-  // Allow other portfolio UI elements (for example Recruiter View)
-  // to open the same AI panel without duplicating the widget UI.
-  window.openRahulAI = () => {
-    toggle(true)
-    window.dispatchEvent(new CustomEvent('rahul:ai-opened'))
-  }
-
-  window.addEventListener('rahul:open-ai', () => {
-    window.openRahulAI?.()
-  })
-
   // Make the AI feature obvious for first-time visitors, then keep it compact.
-  // Keep the AI launcher labeled so visitors immediately know what it does.
-  launcher.classList.add('is-highlighted')
+  window.setTimeout(() => {
+    launcher.classList.remove('is-highlighted')
+    launcher.classList.add('is-compact')
+  }, 7000)
 
   function applyWidgetTheme(theme) {
     const palettes = {

@@ -423,12 +423,7 @@
     body { background:white !important; color:#111 !important; }
     section, .hero { break-inside:avoid; }
   }
-
-  .insights-fab { position:fixed; left:18px; bottom:18px; z-index:9998; width:38px; height:38px; border-radius:50%; border:1px solid var(--border); background:var(--surface); color:var(--accent); cursor:pointer; box-shadow:0 8px 24px var(--shadow); opacity:.78; }
-  .insights-fab:hover { opacity:1; transform:translateY(-2px); }
-
-
-  /* Light theme readability fixes */
+/* Light theme readability fixes */
   body[data-theme="light"] .tl-body,
   body[data-theme="light"] .about-text,
   body[data-theme="light"] .contact-info-intro,
@@ -1201,8 +1196,6 @@
       stats.messagesSent++;
       saveStats(stats);
     }, { capture:true });
-
-    document.getElementById('insightsFab')?.addEventListener('click', () => { renderInsights(); openModal('insightsModal'); });
     // Expose a small hook for the AI widget.
     window.addEventListener('rahul:ai-opened', () => { stats.aiOpens++; saveStats(stats); });
     window.addEventListener('rahul:open-ai', () => {
@@ -1212,8 +1205,6 @@
     });
   })();
 </script>
-<button class="insights-fab" id="insightsFab" type="button" title="Session insights">◔</button>
-
 <script>
 (() => {
   const $ = (id) => document.getElementById(id);

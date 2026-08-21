@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rahul Kumar  -  Technical Lead</title>
-<meta name="description" content="Rahul Kumar - Technical Lead with 10+ years in Banking & Financial Services. Application development and production support specialist building reliable, scalable systems.">
+<meta name="description" content="Rahul Kumar - Technical Lead with 11+ years in Banking & Financial Services. Application development and production support specialist building reliable, scalable systems.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="theme-color" content="#0a1628">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Rahul Kumar - Technical Lead">
-<meta property="og:description" content="10+ years in Banking & Financial Services. Application development and production support specialist building reliable, scalable systems.">
+<meta property="og:description" content="11+ years in Banking & Financial Services. Application development and production support specialist building reliable, scalable systems.">
 <meta property="og:image" content="rahul-photo.jpg">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Rahul Kumar - Technical Lead">
@@ -490,6 +490,225 @@
     .reveal-ready section { opacity: 1; transform: none; transition: none; }
   }
 
+
+/* ==========================
+   Portfolio 3.0 additions
+   ========================== */
+.p30-section { position:relative; }
+.p30-eyebrow { display:flex; align-items:center; gap:9px; }
+.p30-eyebrow::before { content:""; width:26px; height:1px; background:var(--accent); opacity:.8; }
+
+.impact-grid {
+  display:grid; grid-template-columns:repeat(6,1fr); gap:10px; margin-top:-1rem;
+}
+.impact-card {
+  background:linear-gradient(145deg,var(--card),rgba(255,255,255,.02));
+  border:1px solid var(--border); border-radius:12px; padding:18px 14px;
+  text-align:center; transition:.25s ease; position:relative; overflow:hidden;
+}
+.impact-card::after {
+  content:""; position:absolute; inset:auto -30% -65% -30%; height:90px;
+  background:radial-gradient(circle,var(--theme-glow),transparent 68%);
+  pointer-events:none;
+}
+.impact-card:hover { transform:translateY(-4px); border-color:var(--accent); box-shadow:0 16px 34px var(--theme-glow); }
+.impact-num { display:block; font-family:'DM Serif Display',serif; color:var(--accent); font-size:2rem; line-height:1; }
+.impact-label { display:block; margin-top:8px; color:var(--muted); font-size:10px; text-transform:uppercase; letter-spacing:.8px; }
+
+.what-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; }
+.what-card {
+  background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1.4rem;
+  min-height:190px; transition:.25s ease;
+}
+.what-card:hover { transform:translateY(-5px); border-color:var(--accent); box-shadow:0 16px 36px var(--theme-glow); }
+.what-icon {
+  width:44px; height:44px; display:grid; place-items:center; border-radius:11px;
+  background:rgba(232,201,126,.1); border:1px solid var(--border); color:var(--accent); font-size:21px; margin-bottom:1rem;
+}
+.what-card h3 { font-family:'DM Serif Display',serif; font-size:1.2rem; margin-bottom:.45rem; }
+.what-card p { color:var(--muted); font-size:12.5px; line-height:1.7; }
+.what-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:1rem; }
+.what-tags span { color:var(--accent); border:1px solid var(--border); background:rgba(232,201,126,.06); border-radius:999px; padding:4px 7px; font-size:10px; }
+
+.domain-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.domain-card {
+  background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1.5rem;
+}
+.domain-list { display:grid; grid-template-columns:1fr 1fr; gap:9px; margin-top:1rem; }
+.domain-item { padding:11px 12px; border-radius:9px; background:rgba(255,255,255,.025); border:1px solid rgba(255,255,255,.06); }
+.domain-item b { display:block; font-size:12px; color:var(--white); }
+.domain-item span { display:block; color:var(--muted); font-size:10px; margin-top:2px; }
+
+.stack-flow { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-top:1rem; }
+.stack-node {
+  padding:9px 12px; border:1px solid var(--border); border-radius:9px;
+  background:var(--card); color:var(--white); font-size:11px;
+}
+.stack-arrow { color:var(--accent); font-size:16px; }
+
+.why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+.why-card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1.5rem; }
+.why-card .why-no { color:var(--accent); font-family:'DM Serif Display',serif; font-size:28px; }
+.why-card h3 { font-family:'DM Serif Display',serif; font-size:1.15rem; margin:.45rem 0; }
+.why-card p { color:var(--muted); font-size:13px; line-height:1.75; }
+
+.recognition {
+  margin-top:1.5rem; padding:1.35rem 1.5rem; border:1px solid var(--border);
+  border-left:3px solid var(--accent); background:var(--card); border-radius:10px;
+}
+.recognition p { color:rgba(245,242,236,.78); font-size:14px; line-height:1.8; }
+.recognition strong { color:var(--accent); }
+
+.p30-hero-badge {
+  display:inline-flex; align-items:center; gap:7px; margin-top:12px; padding:7px 10px;
+  border:1px solid var(--border); border-radius:999px; background:rgba(232,201,126,.07);
+  color:var(--accent); font-size:10px; letter-spacing:1px; text-transform:uppercase;
+}
+.p30-photo-wrap {
+  position:relative;
+  width:190px;
+  height:190px;
+  aspect-ratio:1 / 1;
+  flex:0 0 190px;
+  margin:0 auto 1.5rem;
+  border-radius:50%;
+  display:block;
+  isolation:isolate;
+}
+.p30-photo-wrap::before {
+  content:"";
+  position:absolute;
+  width:208px;
+  height:208px;
+  left:-9px;
+  top:-9px;
+  border-radius:50%;
+  background:conic-gradient(from 0deg, var(--accent), var(--accent2), transparent 28%, transparent 72%, var(--accent));
+  -webkit-mask:radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 3px));
+  mask:radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 3px));
+  animation:p30Spin 5s linear infinite;
+  z-index:2;
+  pointer-events:none;
+}
+.p30-photo-wrap::after {
+  content:"";
+  position:absolute;
+  width:230px;
+  height:230px;
+  left:-20px;
+  top:-20px;
+  border-radius:50%;
+  border:1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  box-shadow:0 0 45px var(--theme-glow);
+  z-index:0;
+  pointer-events:none;
+}
+.p30-photo-wrap img {
+  position:absolute !important;
+  left:5px !important;
+  top:5px !important;
+  width:180px !important;
+  height:180px !important;
+  min-width:180px;
+  min-height:180px;
+  max-width:180px;
+  max-height:180px;
+  aspect-ratio:1 / 1 !important;
+  border-radius:50% !important;
+  object-fit:cover !important;
+  object-position:center top !important;
+  display:block !important;
+  z-index:1;
+}
+@keyframes p30Spin { to { transform:rotate(360deg); } }
+
+@media (max-width:900px) {
+  .impact-grid { grid-template-columns:repeat(3,1fr); }
+  .what-grid { grid-template-columns:repeat(2,1fr); }
+  .why-grid { grid-template-columns:1fr; }
+}
+@media (max-width:600px) {
+  .impact-grid { grid-template-columns:repeat(2,1fr); }
+  .what-grid, .domain-grid { grid-template-columns:1fr; }
+  .domain-list { grid-template-columns:1fr; }
+  .impact-num { font-size:1.65rem; }
+}
+
+
+/* Portfolio 3.1 — visual refinement; original portrait retained */
+.current-role-card {
+  background:
+    radial-gradient(circle at 92% 10%, rgba(232,201,126,.08), transparent 25%),
+    var(--card);
+  border-color: rgba(232,201,126,.25);
+}
+.current-role-head {
+  display:flex; justify-content:space-between; gap:20px; align-items:flex-start;
+  flex-wrap:wrap; margin-bottom:1rem;
+}
+.current-role-head h3 {
+  font-family:'DM Serif Display',serif; font-size:1.65rem; margin:.25rem 0 .35rem;
+  color:var(--white);
+}
+.current-role-head p { color:var(--muted); font-size:13px; margin:0; }
+.role-pill {
+  color:var(--accent); border:1px solid var(--accent); border-radius:999px;
+  padding:7px 11px; font-size:10px; letter-spacing:1px; white-space:nowrap;
+  background:rgba(232,201,126,.06);
+}
+.current-role-summary {
+  max-width:900px; color:var(--muted); line-height:1.8; font-size:13px;
+  padding:14px 16px; margin:0 0 1.25rem; border-left:2px solid var(--accent);
+  background:rgba(255,255,255,.02); border-radius:0 8px 8px 0;
+}
+.current-tech-tags { margin-top:1.25rem; }
+.current-tech-tags span { transition:.2s ease; }
+.current-tech-tags span:hover { border-color:var(--accent); transform:translateY(-2px); }
+
+.p31-glow-card {
+  position:relative; overflow:hidden;
+}
+.p31-glow-card::before {
+  content:""; position:absolute; width:220px; height:220px; border-radius:50%;
+  right:-100px; top:-120px; background:rgba(232,201,126,.08);
+  filter:blur(20px); pointer-events:none;
+}
+.p31-accent-line {
+  width:60px; height:2px; margin:9px 0 20px;
+  background:linear-gradient(90deg,var(--accent),transparent);
+}
+.p31-chip-row { display:flex; flex-wrap:wrap; gap:7px; margin-top:1rem; }
+.p31-chip {
+  padding:6px 9px; border-radius:999px; border:1px solid var(--border);
+  background:rgba(255,255,255,.025); color:var(--muted); font-size:10px;
+}
+@media (max-width:700px) {
+  .current-role-head h3 { font-size:1.35rem; }
+}
+
+
+  body[data-theme="slate"] {
+    --navy:#0b111b; --navy2:#151d2b; --accent:#d6dee9; --accent2:#94a3b8;
+    --white:#f8fafc; --muted:rgba(248,250,252,.64); --border:rgba(214,222,233,.2);
+    --card:rgba(214,222,233,.045); --surface:#111827; --surface-2:#1f2937; --theme-glow:rgba(148,163,184,.18);
+  }
+  body[data-theme="emerald"] {
+    --navy:#06130f; --navy2:#0c211a; --accent:#6ee7b7; --accent2:#34d399;
+    --white:#ecfdf5; --muted:rgba(236,253,245,.64); --border:rgba(110,231,183,.2);
+    --card:rgba(110,231,183,.045); --surface:#092018; --surface-2:#103426; --theme-glow:rgba(52,211,153,.2);
+  }
+  body[data-theme="copper"] {
+    --navy:#180d0a; --navy2:#2a1510; --accent:#f0a36b; --accent2:#d97745;
+    --white:#fff7ed; --muted:rgba(255,247,237,.65); --border:rgba(240,163,107,.2);
+    --card:rgba(240,163,107,.05); --surface:#21110d; --surface-2:#382019; --theme-glow:rgba(217,119,69,.2);
+  }
+  .client-project-grid .project-card { min-height:100%; }
+  .project-client { color:var(--accent); font-size:11px; letter-spacing:.3px; margin:-3px 0 10px; }
+  .project-featured { border-color:rgba(232,201,126,.32); box-shadow:0 10px 40px var(--theme-glow); }
+  .section-intro { max-width:780px; color:var(--muted); font-size:13px; line-height:1.75; margin:-10px 0 24px; }
+  .nav-links a { transition:color .2s ease, transform .2s ease; }
+  .nav-links a:hover { transform:translateY(-1px); }
+
 </style>
 </head>
 <body>
@@ -497,8 +716,8 @@
   <div class="nav-logo">RK</div>
   <button class="nav-mobile-toggle" id="navMobileToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
   <div class="nav-links" id="navLinks">
-    <a href="#about">About</a><a href="#experience">Experience</a>
-    <a href="#achievements">Achievements</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#ask-ai">Ask AI</a><a href="#contact">Contact</a>
+    <a href="#about">About</a><a href="#impact">Impact</a><a href="#expertise">Expertise</a><a href="#current-role">Current Role</a><a href="#experience">Experience</a>
+    <a href="#achievements">Achievements</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#personal-projects">Builds</a><a href="#education">Education</a><a href="#ask-ai">Ask AI</a><a href="#contact">Contact</a>
     <button class="nav-tool-btn" id="recruiterModeBtn" type="button" title="Open recruiter view">👔</button>
     <button class="nav-tool-btn" id="themeToggle" type="button" title="Change theme">🎨</button>
     <button class="nav-tool-btn" id="commandPaletteBtn" type="button" title="Command palette">⌘K</button>
@@ -507,12 +726,12 @@
 <div class="hero">
   <div class="hero-inner">
     <div>
-      <div class="hero-tag">Technical Lead  |  10+ Years  |  Banking &amp; FinTech</div>
+      <div class="hero-tag">Technical Lead  |  11+ Years  |  Banking &amp; Financial Services</div>
       <h1>Rahul<br><em>Kumar</em></h1>
       <p class="hero-subtitle">Application Development & Production Support specialist in Banking & Financial Services. Building reliable, scalable systems that power critical operations.</p>
       <div class="hero-stats">
-        <div><span class="stat-num" data-count-to="10" data-suffix="+">10+</span><span class="stat-label">Years Exp.</span></div>
-        <div><span class="stat-num" data-count-to="15" data-suffix="+">15+</span><span class="stat-label">Clients</span></div>
+        <div><span class="stat-num" data-count-to="11" data-suffix="+">11+</span><span class="stat-label">Years Exp.</span></div>
+        <div><span class="stat-num" data-count-to="15" data-suffix="+">15+</span><span class="stat-label">Client Deliverables</span></div>
         <div><span class="stat-num">L2/L3</span><span class="stat-label">Support Lead</span></div>
       </div>
       <div class="hero-btns">
@@ -524,9 +743,12 @@
         <span class="status-dot"></span>
         <span>Technical Lead · Application Development · Production Support</span>
       </div>
+      <div class="p30-hero-badge">✦ Engineering · Operations · Leadership</div>
     </div>
     <div class="hero-card">
-      <img src="rahul-photo.jpg" alt="Rahul Kumar" width="180" height="180" loading="eager" style="width:180px;height:180px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--accent);box-shadow:0 0 40px rgba(232,201,126,0.18);display:block;margin:0 auto 1.5rem;"><h3>Rahul Kumar</h3>
+      <div class="p30-photo-wrap">
+        <img src="rahul-photo.jpg" alt="Rahul Kumar" width="180" height="180" loading="eager" >
+      </div><h3>Rahul Kumar</h3>
       <p>Java  |  ReactJS  |  SQL  |  Snowflake  |  Unix  |  Splunk</p>
       <div class="contact-row"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>rahul.rahul.kumar704@gmail.com</div>
       <div class="contact-row"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498A1 1 0 0121 15.72V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>+91 9213320400</div>
@@ -542,23 +764,153 @@
   </div>
 </div>
 
+
+<section id="impact" class="p30-section">
+  <div class="section-label p30-eyebrow">Impact</div>
+  <h2>Career at a Glance</h2>
+  <div class="impact-grid">
+    <div class="impact-card"><span class="impact-num" data-count-to="11" data-suffix="+">11+</span><span class="impact-label">Years Experience</span></div>
+    <div class="impact-card"><span class="impact-num" data-count-to="15" data-suffix="+">15+</span><span class="impact-label">Client Deliverables</span></div>
+    <div class="impact-card"><span class="impact-num" data-count-to="8" data-suffix="+">8+</span><span class="impact-label">Applications / Platforms</span></div>
+    <div class="impact-card"><span class="impact-num">Java</span><span class="impact-label">Backend Engineering</span></div>
+    <div class="impact-card"><span class="impact-num">L2/L3</span><span class="impact-label">Production Support</span></div>
+    <div class="impact-card"><span class="impact-num">BFS</span><span class="impact-label">Banking &amp; Financial Services</span></div>
+  </div>
+</section>
+
+<section id="expertise" class="p30-section">
+  <div class="section-label p30-eyebrow">Expertise</div>
+  <h2>What I Do</h2>
+  <div class="what-grid">
+    <div class="what-card">
+      <div class="what-icon">⌘</div>
+      <h3>Application Development</h3>
+      <p>Design and build reliable applications with a strong focus on maintainability, APIs and responsive user experiences.</p>
+      <div class="what-tags"><span>Java</span><span>Spring</span><span>ReactJS</span><span>REST</span></div>
+    </div>
+    <div class="what-card">
+      <div class="what-icon">⚡</div>
+      <h3>Production Engineering</h3>
+      <p>Lead L2/L3 operations, incident resolution, troubleshooting, RCA and SLA/SLO-driven support for critical platforms.</p>
+      <div class="what-tags"><span>L2/L3</span><span>RCA</span><span>SLA/SLO</span><span>Monitoring</span></div>
+    </div>
+    <div class="what-card">
+      <div class="what-icon">▦</div>
+      <h3>Data & Monitoring</h3>
+      <p>Use SQL, Snowflake and observability platforms to diagnose issues, improve performance and make operations measurable.</p>
+      <div class="what-tags"><span>SQL</span><span>Snowflake</span><span>Grafana</span><span>Splunk</span></div>
+    </div>
+    <div class="what-card">
+      <div class="what-icon">◆</div>
+      <h3>Technical Leadership</h3>
+      <p>Bridge development, support and stakeholders through KT, documentation, release coordination, automation and process improvement.</p>
+      <div class="what-tags"><span>KT</span><span>Release</span><span>Automation</span><span>Leadership</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="domain" class="p30-section">
+  <div class="section-label p30-eyebrow">Industry</div>
+  <h2>Domain Expertise</h2>
+  <div class="domain-grid">
+    <div class="domain-card">
+      <div class="section-label">Banking & Financial Services</div>
+      <h3 style="font-family:'DM Serif Display',serif;font-size:1.35rem;margin-top:.35rem;">Business-Critical Platforms</h3>
+      <div class="domain-list">
+        <div class="domain-item"><b>Securities</b><span>Financial data & operations</span></div>
+        <div class="domain-item"><b>Trade Processing</b><span>Operational workflows</span></div>
+        <div class="domain-item"><b>Equities</b><span>Market-related systems</span></div>
+        <div class="domain-item"><b>Reference Data</b><span>Critical data operations</span></div>
+        <div class="domain-item"><b>GL / Accounting</b><span>Financial processing</span></div>
+        <div class="domain-item"><b>SLA / SLO</b><span>Service reliability</span></div>
+      </div>
+    </div>
+    <div class="domain-card">
+      <div class="section-label">Technology Journey</div>
+      <h3 style="font-family:'DM Serif Display',serif;font-size:1.35rem;margin-top:.35rem;">From Development to Production Engineering</h3>
+      <div class="stack-flow">
+        <span class="stack-node">SQL / Unix</span><span class="stack-arrow">→</span>
+        <span class="stack-node">Java / React</span><span class="stack-arrow">→</span>
+        <span class="stack-node">Production Support</span><span class="stack-arrow">→</span>
+        <span class="stack-node">Observability</span><span class="stack-arrow">→</span>
+        <span class="stack-node">Automation</span>
+      </div>
+      <p style="color:var(--muted);font-size:13px;line-height:1.8;margin-top:1.2rem;">A career built across application engineering, data, operations and technical leadership — with a practical focus on reliability and continuous improvement.</p>
+    </div>
+  </div>
+</section>
+
 <section id="about">
   <div class="section-label">About Me</div>
   <h2>The Professional Story</h2>
   <p class="about-text">I'm a Technical Lead with over a decade of hands-on experience across Application Development, Production Support, Incident & Release Management  -  primarily within Banking and Financial Services. I've worn many hats: from building high-performance front-end applications with ReactJS and Java, to leading L2/L3 production support operations for mission-critical platforms serving 15+ global clients. I thrive at the intersection of engineering and operations, where reliability and continuous improvement go hand in hand.</p>
 </section>
 
+
+
+<section id="current-role" class="p30-section">
+  <div class="section-label p30-eyebrow">Current Role</div>
+  <h2>RIS Application — Bank of Montreal (BMO)</h2>
+  <div class="domain-card current-role-card p31-glow-card">
+    <div class="current-role-head">
+      <div>
+        <div class="section-label">HCL Technologies · 06/2026 – Present · Noida, India</div>
+        <h3>Technical Lead — RIS</h3>
+        <p>Bank of Montreal (BMO)</p>
+      </div>
+      <span class="role-pill">TECHNICAL LEAD</span>
+    </div>
+
+    <p class="current-role-summary">
+      Leading backend development and enhancement of the RIS application, with a focus on scalable,
+      reliable API solutions and production-ready Java application components. Responsible for
+      translating business requirements into maintainable changes while supporting application
+      stability across UAT, BUAT and production.
+    </p>
+
+    <div class="section-label">Key Responsibilities</div>
+    <div class="domain-list">
+      <div class="domain-item"><b>Java Backend & APIs</b><span>Design, develop, maintain and enhance Java-based backend APIs and application components.</span></div>
+      <div class="domain-item"><b>Business Requirements</b><span>Analyze functional requirements and translate them into robust, maintainable and production-ready solutions.</span></div>
+      <div class="domain-item"><b>Enhancement & Change Requests</b><span>Implement application enhancements and change requests with business stakeholders and cross-functional teams.</span></div>
+      <div class="domain-item"><b>Salesforce Collaboration</b><span>Work with the Salesforce team and other technology teams to deliver enhancements within defined timelines.</span></div>
+      <div class="domain-item"><b>UAT & BUAT Support</b><span>Maintain and support UAT and BUAT environments, ensuring application stability and readiness for validation.</span></div>
+      <div class="domain-item"><b>Production Support</b><span>Troubleshoot application and production issues, perform root-cause analysis and implement effective technical resolutions.</span></div>
+      <div class="domain-item"><b>Code Quality & Version Control</b><span>Perform code reviews, debugging, refactoring and continuous codebase improvements while following version-control best practices.</span></div>
+      <div class="domain-item"><b>Availability & Reliability</b><span>Support high application availability and stability during peak business periods through proactive support and issue resolution.</span></div>
+    </div>
+
+    <div class="what-tags current-tech-tags">
+      <span>Java</span><span>REST APIs</span><span>Spring</span><span>Git</span>
+      <span>Code Reviews</span><span>UAT</span><span>BUAT</span><span>Production Support</span>
+    </div>
+  </div>
+</section>
+
 <section id="experience">
   <div class="section-label">Career</div>
   <h2>Professional Experience</h2>
   <div class="timeline">
-    <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">May 2026 - Jun 2026</div><div class="tl-title">Technical Lead  -  Application Transition & Knowledge Transfer</div><div class="tl-company">HCL Technologies -> Ensono  |  Noida, India</div><ul class="tl-body"><li>Led end-to-end transition of ESP and SSCD applications from HCL to Ensono</li><li>Conducted KT sessions on application architecture, monitoring, and troubleshooting</li><li>Prepared operational runbooks, SOPs, and transition documentation</li><li>Coordinated with client stakeholders, dev teams, and Ensono support teams</li></ul></div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Current</div>
+      <div class="tl-title">Technical Lead — RIS Application</div>
+      <div class="tl-company">Bank of Montreal (BMO) Client | banking client</div>
+      <ul class="tl-body">
+        <li>Maintain and support Java backend code for a business-critical banking application</li>
+        <li>Deliver application enhancements based on user requirements and Salesforce team inputs</li>
+        <li>Manage code maintenance, Git version control, testing and production support</li>
+        <li>Collaborate with cross-functional teams to troubleshoot issues and deliver reliable changes</li>
+      </ul>
+    </div>
+
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">May 2026 - Jun 2026</div><div class="tl-title">Technical Lead  -  Application Transition & Knowledge Transfer</div><div class="tl-company">HCL Technologies -> Ensono  |  Noida, India</div><ul class="tl-body"><li>Led end-to-end transition of Enterprise Application and SSCD applications from HCL to Ensono</li><li>Conducted KT sessions on application architecture, monitoring, and troubleshooting</li><li>Prepared operational runbooks, SOPs, and transition documentation</li><li>Coordinated with client stakeholders, dev teams, and Ensono support teams</li></ul></div>
     <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Jun 2025 - Jun 2026</div><div class="tl-title">Technical Lead  -  SSCD Application</div><div class="tl-company">HCL Technologies  |  Noida, India</div><ul class="tl-body"><li>Monitored deliverables across 15+ clients against strict SLAs and SLOs</li><li>Developed and enhanced Grafana dashboards for SSCD deliverables</li><li>Created and optimized Snowflake SQL queries for improved performance</li><li>Identified and drove process improvement and automation initiatives</li></ul></div>
-    <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Jan 2023 - Jun 2026</div><div class="tl-title">Technical Lead  -  ESP Application</div><div class="tl-company">HCL Technologies  |  Noida, India</div><ul class="tl-body"><li>Led L2/L3 incident management with strict adherence to SLA timelines</li><li>Collaborated with L1 support and dev teams for escalation and resolution</li><li>Built and maintained knowledge base of known issues and workarounds</li><li>Produced metrics, reports, and dashboards for support operations</li></ul></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Jan 2023 - Jun 2026</div><div class="tl-title">Technical Lead  -  Enterprise Application Application</div><div class="tl-company">HCL Technologies  |  Noida, India</div><ul class="tl-body"><li>Led L2/L3 incident management with strict adherence to SLA timelines</li><li>Collaborated with L1 support and dev teams for escalation and resolution</li><li>Built and maintained knowledge base of known issues and workarounds</li><li>Produced metrics, reports, and dashboards for support operations</li></ul></div>
     <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Feb 2022 - Dec 2022</div><div class="tl-title">Technical Lead  -  AIS Application</div><div class="tl-company">HCL Technologies  |  Noida, India</div><ul class="tl-body"><li>Gathered and converted business requirements into FRS and URS documents</li><li>Managed quarterly release planning, risk tracking, and deployment support</li><li>Developed Django forms and Admin panels for API and credential management</li><li>Followed Agile/SCRUM methodology for iterative delivery</li></ul></div>
-    <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Jan 2020 - Feb 2022</div><div class="tl-title">Senior Project Engineer  -  DDP (Digital Design Portal)</div><div class="tl-company">Wipro Technologies  |  Greater Noida, India</div><ul class="tl-body"><li>Built a high-performance Digital Design Portal using ReactJS, Redux, and SASS</li><li>Developed a custom UX component library: Accordion, Carousel, Filters, and more</li><li>Implemented JWT authentication layer and custom API interceptors</li><li>Delivered fully responsive, ADA-compliant, SEO-optimized front-end</li></ul></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Jan 2020 - Feb 2022</div><div class="tl-title">Senior Project Engineer  -  DDP (DDP)</div><div class="tl-company">Wipro Technologies  |  Greater Noida, India</div><ul class="tl-body"><li>Built a high-performance DDP using ReactJS, Redux, and SASS</li><li>Developed a custom UX component library: Accordion, Carousel, Filters, and more</li><li>Implemented JWT authentication layer and custom API interceptors</li><li>Delivered fully responsive, ADA-compliant, SEO-optimized front-end</li></ul></div>
     <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Jul 2017 - Dec 2019</div><div class="tl-title">Software Engineer  -  RSW Application</div><div class="tl-company">Wipro Technologies  |  Bangalore, India</div><ul class="tl-body"><li>Served as SME for RSW application; handled process failures and root cause analysis</li><li>Authored stored procedures, functions, and triggers in Oracle SQL</li><li>Designed UNIX shell scripts to automate manual workflows</li><li>Wrote complex SQL using analytical functions, correlated subqueries, and joins</li></ul></div>
-    <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Jun 2015 - Jul 2017</div><div class="tl-title">Software Engineer  -  ADR & TMS Applications</div><div class="tl-company">Wipro Technologies  |  Bangalore, India</div><ul class="tl-body"><li>Designed and coded application modules per customer requirements</li><li>Conducted feasibility checks, impact analysis, and UAT support</li><li>Managed AS400/DB2 system administration, backups, and performance tuning</li><li>Delivered user training via presentations and audio/visual sessions</li></ul></div>
+    <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Jun 2015 - Jul 2017</div><div class="tl-title">Software Engineer  -  AIS & TMS Applications</div><div class="tl-company">Wipro Technologies  |  Bangalore, India</div><ul class="tl-body"><li>Designed and coded application modules per customer requirements</li><li>Conducted feasibility checks, impact analysis, and UAT support</li><li>Managed AS400/DB2 system administration, backups, and performance tuning</li><li>Delivered user training via presentations and audio/visual sessions</li></ul></div>
   </div>
 </section>
 
@@ -640,11 +992,11 @@
 
   </div>
   <div class="achievement-timeline" id="achievementTimeline">
-    <div class="timeline-item"><span>15+</span><div><b>Global Client Support</b><p>Supported critical daily deliverables across multiple financial domains.</p></div></div>
-    <div class="timeline-item"><span>500+</span><div><b>Production Incidents</b><p>Resolved high-volume production incidents while maintaining SLA commitments.</p></div></div>
-    <div class="timeline-item"><span>30%</span><div><b>Monitoring Effort Reduction</b><p>Improved monitoring efficiency through Grafana enhancements and automation initiatives.</p></div></div>
-    <div class="timeline-item"><span>40%</span><div><b>SQL Performance Gain</b><p>Improved query performance through systematic optimization.</p></div></div>
-    <div class="timeline-item"><span>20+</span><div><b>Knowledge Transfer Sessions</b><p>Delivered KT sessions to support application transition and operational handover.</p></div></div>
+    <div class="timeline-item"><span>15+</span><div><b>Client Deliverables</b><p>Continuously monitored and managed deliverables across more than 15 clients in the SSCD engagement.</p></div></div>
+    <div class="timeline-item"><span>UAT</span><div><b>Business Validation Support</b><p>Maintained UAT and BUAT environments and supported business validation for application enhancements.</p></div></div>
+    <div class="timeline-item"><span>API</span><div><b>Backend Engineering</b><p>Leading Java-based backend API development and enhancement for the current RIS application.</p></div></div>
+    <div class="timeline-item"><span>KT</span><div><b>Application Transition</b><p>Led transition activities, knowledge transfer, runbooks, SOPs and stabilization planning for enterprise applications.</p></div></div>
+    <div class="timeline-item"><span>SQL</span><div><b>Performance &amp; Automation</b><p>Optimized SQL queries, enhanced Grafana dashboards and identified process improvement and automation opportunities.</p></div></div>
   </div>
 </section>
 <section id="skills">
@@ -661,46 +1013,119 @@
 </section>
 
 <section id="projects">
-  <div class="section-label">Personal Work</div>
-  <h2>Featured Projects</h2>
-  <div class="projects-grid">
+  <div class="section-label">Client Work</div>
+  <h2>Featured Applications &amp; Projects</h2>
+  <p class="section-intro">Selected applications and platforms from Rahul's professional experience across Bank of Montreal (BMO) and State Street client engagements.</p>
 
+  <div class="projects-grid client-project-grid">
+
+    <div class="project-card project-featured">
+      <span class="project-status is-progress"><span class="status-dot"></span>Current · 06/2026 – Present</span>
+      <h3>RIS Application</h3>
+      <p class="project-client">Bank of Montreal (BMO) · HCL Technologies</p>
+      <p class="project-desc">Business-critical application where Rahul leads backend development and enhancement, maintaining Java APIs and application components while translating business requirements into reliable production-ready solutions.</p>
+      <div class="recruiter-tags" style="margin-bottom:0;">
+        <span>Java</span><span>REST APIs</span><span>Spring</span><span>Git</span><span>UAT / BUAT</span><span>Production Support</span>
+      </div>
+      <div class="project-links"><a href="#current-role" class="btn-ghost">View Responsibilities</a></div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-status is-live"><span class="status-dot"></span>06/2025 – 06/2026</span>
+      <h3>SSCD</h3>
+      <p class="project-client">State Street · HCL Technologies</p>
+      <p class="project-desc">Enhanced version of the Enterprise Application application using Snowflake and Squirrel for database management. Focused on SLA/SLO-based deliverable monitoring, ServiceNow alerts, SQL optimization and Grafana dashboard enhancements across 15+ clients.</p>
+      <div class="recruiter-tags" style="margin-bottom:0;"><span>Snowflake</span><span>Squirrel</span><span>SQL</span><span>Grafana</span><span>ServiceNow</span><span>SLA/SLO</span></div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-status is-live"><span class="status-dot"></span>01/2023 – 06/2026</span>
+      <h3>Enterprise Application</h3>
+      <p class="project-client">State Street · HCL Technologies</p>
+      <p class="project-desc">Production support platform focused on incident resolution, log analysis, severity-based event prioritization, SLA adherence, escalations, knowledge management and collaboration with development and vendor teams.</p>
+      <div class="recruiter-tags" style="margin-bottom:0;"><span>Production Support</span><span>Splunk</span><span>Dynatrace</span><span>ServiceNow</span><span>Incident Management</span></div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-status is-live"><span class="status-dot"></span>02/2022 – 12/2022</span>
+      <h3>AIS</h3>
+      <p class="project-client">State Street · HCL Technologies</p>
+      <p class="project-desc">Worked across requirements, user queries, report support, database management, release planning, change management and UAT support within an Agile/Scrum delivery cycle.</p>
+      <div class="recruiter-tags" style="margin-bottom:0;"><span>Agile</span><span>Scrum</span><span>Snow</span><span>Django</span><span>API Requests</span><span>UAT</span></div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-status is-live"><span class="status-dot"></span>01/2020 – 02/2022</span>
+      <h3>DDP</h3>
+      <p class="project-client">State Street · Wipro Technologies</p>
+      <p class="project-desc">High-performance customer portal developed with ReactJS, React Hooks and Redux, including a custom API layer, JWT token management, reusable UX components and responsive accessible interfaces.</p>
+      <div class="recruiter-tags" style="margin-bottom:0;"><span>ReactJS</span><span>Redux</span><span>JavaScript</span><span>REST</span><span>JWT</span><span>GitLab</span></div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-status is-live"><span class="status-dot"></span>07/2017 – 12/2019</span>
+      <h3>RSW</h3>
+      <p class="project-client">State Street · Wipro Technologies</p>
+      <p class="project-desc">Application SME role covering production monitoring, Java troubleshooting, Oracle business logic, complex SQL, stored procedures and UNIX automation for process reliability.</p>
+      <div class="recruiter-tags" style="margin-bottom:0;"><span>Java</span><span>Oracle</span><span>PL/SQL</span><span>UNIX</span><span>Shell Scripting</span><span>Automation</span></div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-status is-live"><span class="status-dot"></span>06/2015 – 07/2017</span>
+      <h3>AIS</h3>
+      <p class="project-client">State Street · Wipro Technologies</p>
+      <p class="project-desc">Supported application module design and delivery, requirement gathering, impact analysis, business discussions, functional documentation, UAT and user training.</p>
+      <div class="recruiter-tags" style="margin-bottom:0;"><span>Requirement Analysis</span><span>UAT</span><span>Documentation</span><span>Client Support</span></div>
+    </div>
+
+    <div class="project-card">
+      <span class="project-status is-live"><span class="status-dot"></span>06/2015 – 07/2016</span>
+      <h3>TMS</h3>
+      <p class="project-client">State Street · Wipro Technologies</p>
+      <p class="project-desc">AS400/DB2 operations covering system administration, monitoring, PTFs, performance tuning, database maintenance, incident troubleshooting and cross-team support.</p>
+      <div class="recruiter-tags" style="margin-bottom:0;"><span>AS400</span><span>DB2</span><span>System Administration</span><span>Performance Tuning</span></div>
+    </div>
+
+  </div>
+</section>
+
+<section id="personal-projects" class="p30-section">
+  <div class="section-label">Personal Work</div>
+  <h2>Personal Builds</h2>
+  <div class="projects-grid">
     <div class="project-card">
       <span class="project-status is-progress"><span class="status-dot"></span>In Development</span>
       <h3>TicketWave</h3>
-      <p class="project-desc">Full-stack ticket booking platform for flights, buses, trains, and events, with role-based flows for customers, operators, support staff, and admins. Built as a Java backend capstone project with a Spring Boot API and a React frontend.</p>
-      <div class="recruiter-tags" style="margin-bottom:0;">
-        <span>Spring Boot 3</span><span>Java 17</span><span>React 18</span><span>MySQL 8</span><span>JWT Auth</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/rahulkcodes" class="btn-ghost" target="_blank" rel="noopener">View Code</a>
-      </div>
+      <p class="project-desc">Full-stack ticket booking platform with role-based flows, a Spring Boot backend and React frontend.</p>
+      <div class="recruiter-tags" style="margin-bottom:0;"><span>Spring Boot</span><span>Java 17</span><span>React</span><span>MySQL</span><span>JWT</span></div>
+      <div class="project-links"><a href="https://github.com/rahulkcodes" class="btn-ghost" target="_blank" rel="noopener">View Code</a></div>
     </div>
-
     <div class="project-card">
       <span class="project-status is-live"><span class="status-dot"></span>Built</span>
       <h3>Desi Radio</h3>
-      <p class="project-desc">A situation-based ambient music web app for India: pick a mood or moment and get a curated listening experience, with ten mood-based modes and custom hero illustrations for each one.</p>
-      <div class="recruiter-tags" style="margin-bottom:0;">
-        <span>Spring Boot 3</span><span>PostgreSQL</span><span>React + TypeScript</span><span>Tailwind</span><span>Docker</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/rahulkcodes" class="btn-ghost" target="_blank" rel="noopener">View Code</a>
-      </div>
+      <p class="project-desc">Situation-based ambient music web app with mood-driven listening experiences and custom visual modes.</p>
+      <div class="recruiter-tags" style="margin-bottom:0;"><span>Spring Boot</span><span>PostgreSQL</span><span>React</span><span>TypeScript</span><span>Docker</span></div>
+      <div class="project-links"><a href="https://github.com/rahulkcodes" class="btn-ghost" target="_blank" rel="noopener">View Code</a></div>
     </div>
-
     <div class="project-card">
       <span class="project-status is-live"><span class="status-dot"></span>Built</span>
       <h3>SignalScope</h3>
-      <p class="project-desc">Native Android app that turns a phone into a live cellular signal analyzer, with a real-time dBm gauge plus RSRP, RSRQ, and SINR metrics, running as a foreground service with on-device history.</p>
-      <div class="recruiter-tags" style="margin-bottom:0;">
-        <span>Kotlin</span><span>Jetpack Compose</span><span>Room</span><span>Android</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/rahulkcodes" class="btn-ghost" target="_blank" rel="noopener">View Code</a>
-      </div>
+      <p class="project-desc">Android cellular signal analyzer with live signal metrics and on-device history.</p>
+      <div class="recruiter-tags" style="margin-bottom:0;"><span>Kotlin</span><span>Jetpack Compose</span><span>Room</span><span>Android</span></div>
+      <div class="project-links"><a href="https://github.com/rahulkcodes" class="btn-ghost" target="_blank" rel="noopener">View Code</a></div>
     </div>
+  </div>
+</section>
 
+
+<section id="learning" class="p30-section">
+  <div class="section-label p30-eyebrow">Continuous Learning</div>
+  <h2>Certifications & Learning</h2>
+  <div class="what-grid">
+    <div class="what-card"><div class="what-icon">☕</div><h3>Java & Spring</h3><p>Full-stack Java learning with Spring Boot and backend engineering foundations.</p><div class="what-tags"><span>Java</span><span>Spring Boot</span></div></div>
+    <div class="what-card"><div class="what-icon">⚛</div><h3>React & Frontend</h3><p>Hands-on frontend development across ReactJS, Redux, JavaScript and responsive UI engineering.</p><div class="what-tags"><span>ReactJS</span><span>Redux</span><span>JS</span></div></div>
+    <div class="what-card"><div class="what-icon">☁</div><h3>Cloud & Modern Tech</h3><p>Continuous learning across Azure fundamentals, GenAI and modern engineering practices.</p><div class="what-tags"><span>Azure</span><span>GenAI</span></div></div>
+    <div class="what-card"><div class="what-icon">◇</div><h3>Technical Leadership</h3><p>Focused learning in technical leadership, architecture thinking, delivery and team enablement.</p><div class="what-tags"><span>Leadership</span><span>Architecture</span></div></div>
   </div>
 </section>
 
@@ -715,6 +1140,18 @@
   </div>
 </section>
 
+
+
+<section id="why-rahul" class="p30-section">
+  <div class="section-label p30-eyebrow">Value</div>
+  <h2>Why Rahul?</h2>
+  <div class="why-grid">
+    <div class="why-card"><div class="why-no">01</div><h3>Engineering Mindset</h3><p>Builds maintainable solutions with a balance of technical quality, business impact and operational reliability.</p></div>
+    <div class="why-card"><div class="why-no">02</div><h3>Production Ownership</h3><p>Comfortable owning critical incidents, escalations, monitoring, RCA and SLA-driven operations from diagnosis through closure.</p></div>
+    <div class="why-card"><div class="why-no">03</div><h3>Leadership & Knowledge</h3><p>Connects teams through structured KT, documentation, stakeholder communication, release coordination and continuous improvement.</p></div>
+  </div>
+  <div class="recognition"><p><strong>My approach:</strong> I don't just resolve incidents — I look for ways to improve the system, process or monitoring that caused the problem.</p></div>
+</section>
 
 <section id="ask-ai">
   <div class="section-label">AI Agent</div>
@@ -864,7 +1301,7 @@
 </section>
 
 <footer>
-  <div class="footer-links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#achievements">Achievements</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#ask-ai">Ask AI</a></div>
+  <div class="footer-links"><a href="#about">About</a><a href="#current-role">Current Role</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#achievements">Achievements</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#ask-ai">Ask AI</a></div>
   <p>(c) 2026 Rahul Kumar  |  Technical Lead  |  New Delhi, India</p>
 </footer>
 
@@ -875,6 +1312,9 @@
   <button data-theme-choice="corporate"><span>🔵</span><span><b>Corporate Blue</b><small>Enterprise / recruiter</small></span></button>
   <button data-theme-choice="modern"><span>🟣</span><span><b>Modern Tech</b><small>AI / technology feel</small></span></button>
   <button data-theme-choice="light"><span>☀️</span><span><b>Clean Light</b><small>Resume-style presentation</small></span></button>
+  <button data-theme-choice="slate"><span>⚙️</span><span><b>Executive Slate</b><small>Minimal / senior leadership</small></span></button>
+  <button data-theme-choice="emerald"><span>🟢</span><span><b>Emerald Ops</b><small>Engineering / operations</small></span></button>
+  <button data-theme-choice="copper"><span>🟠</span><span><b>Copper Noir</b><small>Warm premium portfolio</small></span></button>
 </div>
 
 <div class="overlay-modal" id="recruiterModal" aria-hidden="true">
@@ -882,9 +1322,9 @@
     <button class="modal-close" data-close-modal="recruiterModal" aria-label="Close">×</button>
     <div class="section-label">Recruiter View</div>
     <h2 id="recruiterTitle">Rahul Kumar</h2>
-    <p class="modal-lead">Technical Lead with 10+ years across application development, production support, incident management, release management, and banking & financial services.</p>
+    <p class="modal-lead">Technical Lead with 11+ years across application development, production support, incident management, release management, and banking & financial services.</p>
     <div class="recruiter-grid">
-      <div><strong>10+</strong><span>Years Experience</span></div>
+      <div><strong>11+</strong><span>Years Experience</span></div>
       <div><strong>15+</strong><span>Global Clients</span></div>
       <div><strong>L2/L3</strong><span>Support Leadership</span></div>
       <div><strong>Java</strong><span>Core Engineering</span></div>
@@ -988,9 +1428,9 @@
   }
 
   const rahulKnowledge = [
-    { title: 'Professional summary', tags: ['summary','profile','about','intro','recruiter','hire','overview','who','career'], answer: 'Rahul Kumar is a Technical Lead based in New Delhi with 10+ years of experience in application development, production support, incident management, release management, and banking/financial services platforms. He has led L2/L3 support, worked with 15+ global clients, and focuses on reliable, scalable systems for critical operations.' },
-    { title: 'Current and recent HCL work', tags: ['hcl','current','enson','transition','kt','knowledge','transfer','sscd','esp','ais','noida'], answer: 'At HCL Technologies, Rahul worked as Technical Lead across ESP, SSCD, AIS, and transition responsibilities. He led ESP and SSCD support, monitored deliverables for 15+ clients, enhanced Grafana dashboards, optimized Snowflake SQL, handled L2/L3 incidents, created runbooks/SOPs, and coordinated KT from HCL to Ensono.' },
-    { title: 'Wipro experience and projects', tags: ['wipro','ddp','digital','design','portal','rsw','adr','tms','react','redux','sass','as400','db2','project','projects'], answer: 'At Wipro, Rahul grew from Software Engineer to Senior Project Engineer. He built the Digital Design Portal using ReactJS, Redux, and SASS; implemented JWT authentication and API interceptors; served as SME for RSW; wrote Oracle SQL procedures, functions, triggers, analytical queries, and UNIX scripts; and supported ADR/TMS modules including AS400/DB2 administration.' },
+    { title: 'Professional summary', tags: ['summary','profile','about','intro','recruiter','hire','overview','who','career'], answer: 'Rahul Kumar is a Technical Lead based in New Delhi with 11+ years of experience in application development, production support, incident management, release management, and banking/financial services platforms. He has led L2/L3 support, worked with 15+ global clients, and focuses on reliable, scalable systems for critical operations.' },
+    { title: 'Current and recent HCL work', tags: ['hcl','current','enson','transition','kt','knowledge','transfer','sscd','esp','ais','noida'], answer: 'At HCL Technologies, Rahul worked as Technical Lead across Enterprise Application, SSCD, AIS, and transition responsibilities. He led Enterprise Application and SSCD support, monitored deliverables for 15+ clients, enhanced Grafana dashboards, optimized Snowflake SQL, handled L2/L3 incidents, created runbooks/SOPs, and coordinated KT from HCL to Ensono.' },
+    { title: 'Wipro experience and projects', tags: ['wipro','ddp','digital','design','portal','rsw','adr','tms','react','redux','sass','as400','db2','project','projects'], answer: 'At Wipro, Rahul grew from Software Engineer to Senior Project Engineer. He built the DDP using ReactJS, Redux, and SASS; implemented JWT authentication and API interceptors; served as SME for RSW; wrote Oracle SQL procedures, functions, triggers, analytical queries, and UNIX scripts; and supported AIS/TMS modules including AS400/DB2 administration.' },
     { title: 'Technical skills', tags: ['skill','skills','technology','tech','stack','java','sql','snowflake','splunk','grafana','dynatrace','servicenow','unix','linux','python','django','react','node'], answer: 'Rahul strongest technical skills include Core Java, Spring, Hibernate, ReactJS, Redux, JavaScript, HTML5, CSS3, Snowflake, Oracle SQL, MySQL, DB2, SQL Server, Unix/Linux shell scripting, Splunk, Dynatrace, Geneos, Grafana, ServiceNow, Autosys, GitLab, Jira, Django, Python, and production support automation.' },
     { title: 'Production support leadership', tags: ['support','production','incident','incidents','l2','l3','sla','slo','monitoring','release','operations','troubleshooting'], answer: 'Rahul has deep production support experience, especially L2/L3 support for banking and financial services systems. He has led incident management, escalations, SLA/SLO adherence, release planning, monitoring dashboards, knowledge base maintenance, operational reporting, and troubleshooting for business-critical platforms.' },
     { title: 'Achievements and impact', tags: ['achievement','achievements','impact','client','clients','performance','effort','appreciation','automation','metrics','500','30','40'], answer: 'Key achievements include supporting 15+ global clients, resolving 500+ production incidents annually with SLA compliance, reducing manual monitoring effort by 30% through Grafana improvements and automation, improving SQL performance by 40%, delivering 20+ KT sessions, and receiving multiple client appreciations.' },
@@ -1148,7 +1588,7 @@
     if (!stats.started) { stats.started = new Date().toISOString(); saveStats(stats); }
 
     function applyTheme(theme) {
-      const allowed = ['midnight','developer','corporate','modern','light'];
+      const allowed = ['midnight','developer','corporate','modern','light','slate','emerald','copper'];
       const chosen = allowed.includes(theme) ? theme : 'midnight';
       body.dataset.theme = chosen;
       try { localStorage.setItem(THEME_KEY, chosen); } catch {}
